@@ -9,7 +9,7 @@ int in(const char *p) { char b[64]; printf("%s", p); if (!fgets(b, 64, stdin)) e
 void swp(int *a, int *b) { int t = *a; *a = *b; *b = t; }
 void show(int a[], int n) { for (int i = 0; i < n; i++) printf("%d ", a[i]); puts(""); }
 
-/* ---------- 1. Sorting & Searching ---------- */
+/* ---------- 1. Sorting & Searching --------- */
 void bubble(int a[], int n) { for (int i = 0; i < n - 1; i++) for (int j = 0; j < n - i - 1; j++) if (a[j] > a[j + 1]) swp(&a[j], &a[j + 1]); }
 void selection(int a[], int n) { for (int i = 0; i < n - 1; i++) { int m = i; for (int j = i + 1; j < n; j++) if (a[j] < a[m]) m = j; swp(&a[i], &a[m]); } }
 void insertion(int a[], int n) { for (int i = 1; i < n; i++) { int k = a[i], j = i - 1; while (j >= 0 && a[j] > k) { a[j + 1] = a[j]; j--; } a[j + 1] = k; } }
